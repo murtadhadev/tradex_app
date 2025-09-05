@@ -1,0 +1,559 @@
+{
+  "@@locale": "en",
+  "appTitle": "GoTradex",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error text"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Edit button text"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add button text"
+  },
+  "remove": "Remove",
+  "@remove": {
+    "description": "Remove button text"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search text"
+  },
+  "filter": "Filter",
+  "@filter": {
+    "description": "Filter text"
+  },
+  "sort": "Sort",
+  "@sort": {
+    "description": "Sort text"
+  },
+  "clear": "Clear",
+  "@clear": {
+    "description": "Clear text"
+  },
+  "back": "Back",
+  "@back": {
+    "description": "Back button text"
+  },
+  "next": "Next",
+  "@next": {
+    "description": "Next button text"
+  },
+  "previous": "Previous",
+  "@previous": {
+    "description": "Previous button text"
+  },
+  "done": "Done",
+  "@done": {
+    "description": "Done button text"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Close button text"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button text"
+  },
+  "yes": "Yes",
+  "@yes": {
+    "description": "Yes button text"
+  },
+  "no": "No",
+  "@no": {
+    "description": "No button text"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home navigation text"
+  },
+  "cart": "Cart",
+  "@cart": {
+    "description": "Cart navigation text"
+  },
+  "orders": "Orders",
+  "@orders": {
+    "description": "Orders navigation text"
+  },
+  "account": "Account",
+  "@account": {
+    "description": "Account navigation text"
+  },
+  "mostPopular": "Most Popular Products",
+  "@mostPopular": {
+    "description": "Most popular products section title"
+  },
+  "bestSelling": "Best Selling Products",
+  "@bestSelling": {
+    "description": "Best selling products section title"
+  },
+  "categories": "Categories",
+  "@categories": {
+    "description": "Categories section title"
+  },
+  "brands": "Brands",
+  "@brands": {
+    "description": "Brands section title"
+  },
+  "seeAll": "See All",
+  "@seeAll": {
+    "description": "See all button text"
+  },
+  "productName": "Product Name",
+  "@productName": {
+    "description": "Product name label"
+  },
+  "price": "Price",
+  "@price": {
+    "description": "Price label"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Description label"
+  },
+  "quantity": "Quantity",
+  "@quantity": {
+    "description": "Quantity label"
+  },
+  "minQuantity": "Min Quantity",
+  "@minQuantity": {
+    "description": "Minimum quantity label"
+  },
+  "maxQuantity": "Max Quantity",
+  "@maxQuantity": {
+    "description": "Maximum quantity label"
+  },
+  "addToCart": "Add to Cart",
+  "@addToCart": {
+    "description": "Add to cart button text"
+  },
+  "addedToCart": "Added to Cart",
+  "@addedToCart": {
+    "description": "Added to cart text"
+  },
+  "outOfStock": "Out of Stock",
+  "@outOfStock": {
+    "description": "Out of stock text"
+  },
+  "inStock": "In Stock",
+  "@inStock": {
+    "description": "In stock text"
+  },
+  "rating": "Rating",
+  "@rating": {
+    "description": "Rating label"
+  },
+  "reviews": "Reviews",
+  "@reviews": {
+    "description": "Reviews label"
+  },
+  "supplierInfo": "Supplier Information",
+  "@supplierInfo": {
+    "description": "Supplier information section title"
+  },
+  "productDetails": "Product Details",
+  "@productDetails": {
+    "description": "Product details section title"
+  },
+  "contactSupplier": "Contact Supplier",
+  "@contactSupplier": {
+    "description": "Contact supplier button text"
+  },
+  "call": "Call",
+  "@call": {
+    "description": "Call button text"
+  },
+  "whatsapp": "WhatsApp",
+  "@whatsapp": {
+    "description": "WhatsApp button text"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email button text"
+  },
+  "message": "Message",
+  "@message": {
+    "description": "Message button text"
+  },
+  "cartEmpty": "Your Cart is Empty",
+  "@cartEmpty": {
+    "description": "Empty cart message"
+  },
+  "cartEmptyMessage": "Add some products to get started",
+  "@cartEmptyMessage": {
+    "description": "Empty cart description"
+  },
+  "total": "Total",
+  "@total": {
+    "description": "Total label"
+  },
+  "items": "items",
+  "@items": {
+    "description": "Items label"
+  },
+  "checkout": "Checkout",
+  "@checkout": {
+    "description": "Checkout button text"
+  },
+  "removeItem": "Remove Item",
+  "@removeItem": {
+    "description": "Remove item dialog title"
+  },
+  "removeConfirm": "Are you sure you want to remove \"{productName}\" from your cart?",
+  "@removeConfirm": {
+    "description": "Remove item confirmation message",
+    "placeholders": {
+      "productName": {
+        "type": "String",
+        "description": "The name of the product to remove"
+      }
+    }
+  },
+  "itemRemoved": "{productName} removed from cart",
+  "@itemRemoved": {
+    "description": "Item removed confirmation message",
+    "placeholders": {
+      "productName": {
+        "type": "String",
+        "description": "The name of the removed product"
+      }
+    }
+  },
+  "ordersEmpty": "No Orders Yet",
+  "@ordersEmpty": {
+    "description": "Empty orders message"
+  },
+  "ordersEmptyMessage": "Your orders will appear here",
+  "@ordersEmptyMessage": {
+    "description": "Empty orders description"
+  },
+  "orderNumber": "Order #{orderNumber}",
+  "@orderNumber": {
+    "description": "Order number format",
+    "placeholders": {
+      "orderNumber": {
+        "type": "String",
+        "description": "The order number"
+      }
+    }
+  },
+  "orderDate": "Order Date",
+  "@orderDate": {
+    "description": "Order date label"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Status label"
+  },
+  "totalAmount": "Total Amount",
+  "@totalAmount": {
+    "description": "Total amount label"
+  },
+  "paymentMethod": "Payment Method",
+  "@paymentMethod": {
+    "description": "Payment method label"
+  },
+  "pending": "Pending",
+  "@pending": {
+    "description": "Pending status"
+  },
+  "confirmed": "Confirmed",
+  "@confirmed": {
+    "description": "Confirmed status"
+  },
+  "shipped": "Shipped",
+  "@shipped": {
+    "description": "Shipped status"
+  },
+  "delivered": "Delivered",
+  "@delivered": {
+    "description": "Delivered status"
+  },
+  "cancelled": "Cancelled",
+  "@cancelled": {
+    "description": "Cancelled status"
+  },
+  "cashOnDelivery": "Cash on Delivery",
+  "@cashOnDelivery": {
+    "description": "Cash on delivery payment method"
+  },
+  "creditCard": "Credit/Debit Card",
+  "@creditCard": {
+    "description": "Credit card payment method"
+  },
+  "bankTransfer": "Bank Transfer",
+  "@bankTransfer": {
+    "description": "Bank transfer payment method"
+  },
+  "checkoutTitle": "Checkout",
+  "@checkoutTitle": {
+    "description": "Checkout page title"
+  },
+  "deliveryInfo": "Delivery Information",
+  "@deliveryInfo": {
+    "description": "Delivery information section title"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "fullNameHint": "Enter your full name",
+  "@fullNameHint": {
+    "description": "Full name field hint"
+  },
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Phone number field label"
+  },
+  "phoneNumberHint": "Enter your phone number",
+  "@phoneNumberHint": {
+    "description": "Phone number field hint"
+  },
+  "deliveryAddress": "Delivery Address",
+  "@deliveryAddress": {
+    "description": "Delivery address field label"
+  },
+  "deliveryAddressHint": "Enter your complete delivery address",
+  "@deliveryAddressHint": {
+    "description": "Delivery address field hint"
+  },
+  "orderNotes": "Order Notes (Optional)",
+  "@orderNotes": {
+    "description": "Order notes field label"
+  },
+  "orderNotesHint": "Any special instructions for delivery",
+  "@orderNotesHint": {
+    "description": "Order notes field hint"
+  },
+  "placeOrder": "Place Order",
+  "@placeOrder": {
+    "description": "Place order button text"
+  },
+  "orderSummary": "Order Summary",
+  "@orderSummary": {
+    "description": "Order summary section title"
+  },
+  "subtotal": "Subtotal",
+  "@subtotal": {
+    "description": "Subtotal label"
+  },
+  "deliveryFee": "Delivery Fee",
+  "@deliveryFee": {
+    "description": "Delivery fee label"
+  },
+  "orderSuccess": "Order Placed Successfully!",
+  "@orderSuccess": {
+    "description": "Order success message"
+  },
+  "orderSuccessMessage": "Your order #{orderNumber} has been placed successfully",
+  "@orderSuccessMessage": {
+    "description": "Order success description",
+    "placeholders": {
+      "orderNumber": {
+        "type": "String",
+        "description": "The order number"
+      }
+    }
+  },
+  "estimatedDelivery": "Estimated Delivery",
+  "@estimatedDelivery": {
+    "description": "Estimated delivery label"
+  },
+  "viewOrders": "View Orders",
+  "@viewOrders": {
+    "description": "View orders button text"
+  },
+  "continueShopping": "Continue Shopping",
+  "@continueShopping": {
+    "description": "Continue shopping button text"
+  },
+  "searchHint": "Search products...",
+  "@searchHint": {
+    "description": "Search field hint"
+  },
+  "noResults": "No Results Found",
+  "@noResults": {
+    "description": "No search results message"
+  },
+  "noResultsMessage": "Try different keywords",
+  "@noResultsMessage": {
+    "description": "No search results description"
+  },
+  "searchProducts": "Search Products",
+  "@searchProducts": {
+    "description": "Search products title"
+  },
+  "searchMessage": "Find what you're looking for",
+  "@searchMessage": {
+    "description": "Search products description"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile section title"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings section title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language section title"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications section title"
+  },
+  "help": "Help",
+  "@help": {
+    "description": "Help section title"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About section title"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English language name"
+  },
+  "arabic": "العربية",
+  "@arabic": {
+    "description": "Arabic language name"
+  },
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language dialog title"
+  },
+  "required": "This field is required",
+  "@required": {
+    "description": "Required field validation message"
+  },
+  "invalidPhone": "Please enter a valid phone number",
+  "@invalidPhone": {
+    "description": "Invalid phone number validation message"
+  },
+  "minLength": "Minimum {length} characters required",
+  "@minLength": {
+    "description": "Minimum length validation message",
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "description": "The minimum length required"
+      }
+    }
+  },
+  "maxLength": "Maximum {length} characters allowed",
+  "@maxLength": {
+    "description": "Maximum length validation message",
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "description": "The maximum length allowed"
+      }
+    }
+  },
+  "manageAccountSettings": "Manage your account settings",
+  "@manageAccountSettings": {
+    "description": "Account settings description"
+  },
+  "payWhenReceive": "Pay when you receive your order",
+  "@payWhenReceive": {
+    "description": "Cash on delivery description"
+  },
+  "paySecurelyWithCard": "Pay securely with your card",
+  "@paySecurelyWithCard": {
+    "description": "Credit card payment description"
+  },
+  "transferDirectly": "Transfer directly to our account",
+  "@transferDirectly": {
+    "description": "Bank transfer description"
+  },
+  "orderConfirmed": "Your order has been confirmed and will be delivered soon.",
+  "@orderConfirmed": {
+    "description": "Order confirmation message"
+  },
+  "orderId": "Order ID:",
+  "@orderId": {
+    "description": "Order ID label"
+  },
+  "businessDays": "2-3 Business Days",
+  "@businessDays": {
+    "description": "Delivery time estimate"
+  },
+  "perUnit": "per unit",
+  "@perUnit": {
+    "description": "Per unit text"
+  },
+  "verified": "Verified",
+  "@verified": {
+    "description": "Verified status"
+  },
+  "specialOfferAvailable": "Special Offer Available",
+  "@specialOfferAvailable": {
+    "description": "Special offer text"
+  },
+  "makePhoneCall": "Make a phone call",
+  "@makePhoneCall": {
+    "description": "Phone call description"
+  },
+  "sendWhatsAppMessage": "Send a WhatsApp message",
+  "@sendWhatsAppMessage": {
+    "description": "WhatsApp message description"
+  },
+  "sendEmail": "Send an email",
+  "@sendEmail": {
+    "description": "Email description"
+  },
+  "noProductsAvailable": "No products available",
+  "@noProductsAvailable": {
+    "description": "No products available message"
+  },
+  "noProductsFoundForBrand": "No products found for this brand",
+  "@noProductsFoundForBrand": {
+    "description": "No products found for brand message"
+  },
+  "noProductsFoundInCategory": "No products found in this category",
+  "@noProductsFoundInCategory": {
+    "description": "No products found in category message"
+  },
+  "subcategories": "Subcategories",
+  "@subcategories": {
+    "description": "Subcategories title"
+  },
+  "products": "Products",
+  "@products": {
+    "description": "Products title"
+  }
+}
