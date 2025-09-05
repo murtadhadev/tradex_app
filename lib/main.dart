@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<LocaleProvider>(
         builder: (context, localeProvider, child) {
           return MaterialApp(
+            showSemanticsDebugger: false,
             theme: AppTheme.lightTheme,
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: AppRouter.generateRoute,
