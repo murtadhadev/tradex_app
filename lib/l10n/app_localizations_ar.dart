@@ -409,4 +409,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get products => 'المنتجات';
+
+  @override
+  String get cannotOpenPhoneApp => 'لا يمكن فتح تطبيق الهاتف';
+
+  @override
+  String get phoneCallError => 'حدث خطأ أثناء محاولة الاتصال';
+
+  @override
+  String get cannotOpenWhatsApp => 'لا يمكن فتح تطبيق الواتساب';
+
+  @override
+  String get whatsappError => 'حدث خطأ أثناء محاولة فتح الواتساب';
+
+  @override
+  String get cannotOpenEmailApp => 'لا يمكن فتح تطبيق البريد الإلكتروني';
+
+  @override
+  String get emailError => 'حدث خطأ أثناء محاولة فتح البريد الإلكتروني';
 }

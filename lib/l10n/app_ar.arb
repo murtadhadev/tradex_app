@@ -129,5 +129,11 @@
   "noProductsFoundForBrand": "لا توجد منتجات لهذه العلامة التجارية",
   "noProductsFoundInCategory": "لا توجد منتجات في هذه الفئة",
   "subcategories": "الفئات الفرعية",
-  "products": "المنتجات"
+  "products": "المنتجات",
+  "cannotOpenPhoneApp": "لا يمكن فتح تطبيق الهاتف",
+  "phoneCallError": "حدث خطأ أثناء محاولة الاتصال",
+  "cannotOpenWhatsApp": "لا يمكن فتح تطبيق الواتساب",
+  "whatsappError": "حدث خطأ أثناء محاولة فتح الواتساب",
+  "cannotOpenEmailApp": "لا يمكن فتح تطبيق البريد الإلكتروني",
+  "emailError": "حدث خطأ أثناء محاولة فتح البريد الإلكتروني"
 }

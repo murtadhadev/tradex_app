@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../cart/presentation/bloc/cart_event.dart';
 import '../../../home/domain/entities/product_entity.dart';
+import '../../../home/domain/entities/client_entity.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_button.dart';
@@ -14,8 +16,9 @@ import '../../../../core/navigation/app_router.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final ProductEntity product;
+  final ClientEntity? client;
 
-  const ProductDetailPage({super.key, required this.product});
+  const ProductDetailPage({super.key, required this.product, this.client});
 
   @override
   State<ProductDetailPage> createState() => _ProductDetailPageState();
@@ -718,7 +721,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Handle bar
             Center(
               child: Container(
                 width: 40,
@@ -739,47 +741,167 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             ),
             const SizedBox(height: 8),
 
-            if (widget.product.clientName != null) ...[
-              Text(
-                widget.product.clientName!,
-                style: AppTextStyles.subtitleMedium.copyWith(
-                  color: AppColors.mediumGray,
-                ),
+            if (widget.client != null || widget.product.clientName != null) ...[
+              Row(
+                children: [
+                  if ((widget.client?.logo ?? widget.product.clientLogo) !=
+                      null) ...[
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: AppColors.lightGray),
+                      ),
+                      child: ClipOval(
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              widget.client?.logo ?? widget.product.clientLogo!,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) => Container(
+                            color: AppColors.lightGray,
+                            child: const Icon(
+                              Icons.business,
+                              color: AppColors.mediumGray,
+                            ),
+                          ),
+                          errorWidget: (context, url, error) => Container(
+                            color: AppColors.lightGray,
+                            child: const Icon(
+                              Icons.business,
+                              color: AppColors.mediumGray,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                  ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.client?.name ?? widget.product.clientName!,
+                          style: AppTextStyles.subtitleMedium.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if ((widget.client?.companyName ??
+                                widget.product.clientCompanyName) !=
+                            null) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            widget.client?.companyName ??
+                                widget.product.clientCompanyName!,
+                            style: AppTextStyles.descriptionMedium.copyWith(
+                              color: AppColors.mediumGray,
+                            ),
+                          ),
+                        ],
+                        if ((widget.client?.isVerified ??
+                            widget.product.clientIsVerified)) ...[
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.verified,
+                                color: AppColors.success,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                AppLocalizations.of(context)!.verified,
+                                style: AppTextStyles.descriptionSmall.copyWith(
+                                  color: AppColors.success,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 20),
             ],
 
-            _buildContactOption(
-              icon: Icons.phone,
-              title: AppLocalizations.of(context)!.call,
-              subtitle: AppLocalizations.of(context)!.makePhoneCall,
-              color: AppColors.success,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            const SizedBox(height: 12),
+            // Phone Call
+            if ((widget.client?.phone ??
+                    widget.client?.companyPhone ??
+                    widget.product.clientPhone ??
+                    widget.product.clientCompanyPhone) !=
+                null)
+              _buildContactOption(
+                icon: Icons.phone,
+                title: AppLocalizations.of(context)!.call,
+                subtitle:
+                    widget.client?.companyPhone ??
+                    widget.client?.phone ??
+                    widget.product.clientCompanyPhone ??
+                    widget.product.clientPhone ??
+                    '',
+                color: AppColors.success,
+                onTap: () {
+                  Navigator.pop(context);
+                  _makePhoneCall(
+                    widget.client?.companyPhone ??
+                        widget.client?.phone ??
+                        widget.product.clientCompanyPhone ??
+                        widget.product.clientPhone!,
+                  );
+                },
+              ),
+            if ((widget.client?.phone ??
+                    widget.client?.companyPhone ??
+                    widget.product.clientPhone ??
+                    widget.product.clientCompanyPhone) !=
+                null)
+              const SizedBox(height: 12),
 
-            _buildContactOption(
-              icon: Icons.message,
-              title: AppLocalizations.of(context)!.whatsapp,
-              subtitle: AppLocalizations.of(context)!.sendWhatsAppMessage,
-              color: const Color(0xFF25D366),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            const SizedBox(height: 12),
+            // WhatsApp
+            if ((widget.client?.phone ??
+                    widget.client?.companyPhone ??
+                    widget.product.clientPhone ??
+                    widget.product.clientCompanyPhone) !=
+                null)
+              _buildContactOption(
+                icon: Icons.message,
+                title: AppLocalizations.of(context)!.whatsapp,
+                subtitle: AppLocalizations.of(context)!.sendWhatsAppMessage,
+                color: const Color(0xFF25D366),
+                onTap: () {
+                  Navigator.pop(context);
+                  _sendWhatsAppMessage(
+                    widget.client?.companyPhone ??
+                        widget.client?.phone ??
+                        widget.product.clientCompanyPhone ??
+                        widget.product.clientPhone!,
+                  );
+                },
+              ),
+            if ((widget.client?.phone ??
+                    widget.client?.companyPhone ??
+                    widget.product.clientPhone ??
+                    widget.product.clientCompanyPhone) !=
+                null)
+              const SizedBox(height: 12),
 
-            _buildContactOption(
-              icon: Icons.email,
-              title: AppLocalizations.of(context)!.email,
-              subtitle: AppLocalizations.of(context)!.sendEmail,
-              color: AppColors.accent,
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+            if ((widget.client?.email ?? widget.product.clientEmail) != null)
+              _buildContactOption(
+                icon: Icons.email,
+                title: AppLocalizations.of(context)!.email,
+                subtitle: widget.client?.email ?? widget.product.clientEmail!,
+                color: AppColors.accent,
+                onTap: () {
+                  Navigator.pop(context);
+                  _sendEmail(
+                    widget.client?.email ?? widget.product.clientEmail!,
+                  );
+                },
+              ),
 
             const SizedBox(height: 20),
           ],
@@ -843,6 +965,82 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri phoneUri = Uri(scheme: 'tel', path: phoneNumber);
+    try {
+      if (await canLaunchUrl(phoneUri)) {
+        await launchUrl(phoneUri, mode: LaunchMode.externalApplication);
+      } else {
+        _showErrorSnackBar(AppLocalizations.of(context)!.cannotOpenPhoneApp);
+      }
+    } catch (e) {
+      _showErrorSnackBar(
+        '${AppLocalizations.of(context)!.phoneCallError}: ${e.toString()}',
+      );
+    }
+  }
+
+  Future<void> _sendWhatsAppMessage(String phoneNumber) async {
+    String cleanNumber = phoneNumber.replaceAll(RegExp(r'[^\d]'), '');
+
+    final Uri whatsappUri = Uri.parse('https://wa.me/$cleanNumber');
+    try {
+      if (await canLaunchUrl(whatsappUri)) {
+        await launchUrl(whatsappUri, mode: LaunchMode.externalApplication);
+      } else {
+        final Uri alternativeUri = Uri.parse(
+          'whatsapp://send?phone=$cleanNumber',
+        );
+        if (await canLaunchUrl(alternativeUri)) {
+          await launchUrl(alternativeUri, mode: LaunchMode.externalApplication);
+        } else {
+          _showErrorSnackBar(AppLocalizations.of(context)!.cannotOpenWhatsApp);
+        }
+      }
+    } catch (e) {
+      _showErrorSnackBar(
+        '${AppLocalizations.of(context)!.whatsappError}: ${e.toString()}',
+      );
+    }
+  }
+
+  Future<void> _sendEmail(String email) async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: email,
+      query:
+          'subject=${Uri.encodeComponent('استفسار عن المنتج: ${widget.product.name}')}',
+    );
+    try {
+      if (await canLaunchUrl(emailUri)) {
+        await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+      } else {
+        _showErrorSnackBar(AppLocalizations.of(context)!.cannotOpenEmailApp);
+      }
+    } catch (e) {
+      _showErrorSnackBar(
+        '${AppLocalizations.of(context)!.emailError}: ${e.toString()}',
+      );
+    }
+  }
+
+  void _showErrorSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: AppTextStyles.descriptionMedium.copyWith(
+            color: AppColors.whiteText,
+          ),
+        ),
+        backgroundColor: AppColors.error,
+        duration: const Duration(seconds: 3),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }

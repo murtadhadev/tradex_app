@@ -877,6 +877,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Products'**
   String get products;
+
+  /// Error message when phone app cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot open phone app'**
+  String get cannotOpenPhoneApp;
+
+  /// Error message for phone call failures
+  ///
+  /// In en, this message translates to:
+  /// **'Error occurred while trying to make a phone call'**
+  String get phoneCallError;
+
+  /// Error message when WhatsApp app cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot open WhatsApp app'**
+  String get cannotOpenWhatsApp;
+
+  /// Error message for WhatsApp failures
+  ///
+  /// In en, this message translates to:
+  /// **'Error occurred while trying to open WhatsApp'**
+  String get whatsappError;
+
+  /// Error message when email app cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot open email app'**
+  String get cannotOpenEmailApp;
+
+  /// Error message for email failures
+  ///
+  /// In en, this message translates to:
+  /// **'Error occurred while trying to open email app'**
+  String get emailError;
 }
 
 class _AppLocalizationsDelegate

@@ -555,5 +555,29 @@
   "products": "Products",
   "@products": {
     "description": "Products title"
+  },
+  "cannotOpenPhoneApp": "Cannot open phone app",
+  "@cannotOpenPhoneApp": {
+    "description": "Error message when phone app cannot be opened"
+  },
+  "phoneCallError": "Error occurred while trying to make a phone call",
+  "@phoneCallError": {
+    "description": "Error message for phone call failures"
+  },
+  "cannotOpenWhatsApp": "Cannot open WhatsApp app",
+  "@cannotOpenWhatsApp": {
+    "description": "Error message when WhatsApp app cannot be opened"
+  },
+  "whatsappError": "Error occurred while trying to open WhatsApp",
+  "@whatsappError": {
+    "description": "Error message for WhatsApp failures"
+  },
+  "cannotOpenEmailApp": "Cannot open email app",
+  "@cannotOpenEmailApp": {
+    "description": "Error message when email app cannot be opened"
+  },
+  "emailError": "Error occurred while trying to open email app",
+  "@emailError": {
+    "description": "Error message for email failures"
   }
 }

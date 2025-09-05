@@ -38,6 +38,16 @@ mixin _$ProductModel {
   String? get clientName => throw _privateConstructorUsedError;
   @JsonKey(name: 'client_id')
   int? get clientId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'client_email')
+  String? get clientEmail => throw _privateConstructorUsedError;
+  @JsonKey(name: 'client_phone')
+  String? get clientPhone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'client_company_name')
+  String? get clientCompanyName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'client_company_phone')
+  String? get clientCompanyPhone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'client_logo')
+  String? get clientLogo => throw _privateConstructorUsedError;
   @JsonKey(name: 'have_discount')
   bool get haveDiscount => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_available')
@@ -76,6 +86,11 @@ abstract class $ProductModelCopyWith<$Res> {
       @JsonKey(name: 'is_cart') bool isCart,
       @JsonKey(name: 'client_name') String? clientName,
       @JsonKey(name: 'client_id') int? clientId,
+      @JsonKey(name: 'client_email') String? clientEmail,
+      @JsonKey(name: 'client_phone') String? clientPhone,
+      @JsonKey(name: 'client_company_name') String? clientCompanyName,
+      @JsonKey(name: 'client_company_phone') String? clientCompanyPhone,
+      @JsonKey(name: 'client_logo') String? clientLogo,
       @JsonKey(name: 'have_discount') bool haveDiscount,
       @JsonKey(name: 'is_available') bool isAvailable,
       @JsonKey(name: 'client_is_verified') bool clientIsVerified,
@@ -111,6 +126,11 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
     Object? isCart = null,
     Object? clientName = freezed,
     Object? clientId = freezed,
+    Object? clientEmail = freezed,
+    Object? clientPhone = freezed,
+    Object? clientCompanyName = freezed,
+    Object? clientCompanyPhone = freezed,
+    Object? clientLogo = freezed,
     Object? haveDiscount = null,
     Object? isAvailable = null,
     Object? clientIsVerified = null,
@@ -159,6 +179,26 @@ class _$ProductModelCopyWithImpl<$Res, $Val extends ProductModel>
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
               as int?,
+      clientEmail: freezed == clientEmail
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientPhone: freezed == clientPhone
+          ? _value.clientPhone
+          : clientPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientCompanyName: freezed == clientCompanyName
+          ? _value.clientCompanyName
+          : clientCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientCompanyPhone: freezed == clientCompanyPhone
+          ? _value.clientCompanyPhone
+          : clientCompanyPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientLogo: freezed == clientLogo
+          ? _value.clientLogo
+          : clientLogo // ignore: cast_nullable_to_non_nullable
+              as String?,
       haveDiscount: null == haveDiscount
           ? _value.haveDiscount
           : haveDiscount // ignore: cast_nullable_to_non_nullable
@@ -220,6 +260,11 @@ abstract class _$$ProductModelImplCopyWith<$Res>
       @JsonKey(name: 'is_cart') bool isCart,
       @JsonKey(name: 'client_name') String? clientName,
       @JsonKey(name: 'client_id') int? clientId,
+      @JsonKey(name: 'client_email') String? clientEmail,
+      @JsonKey(name: 'client_phone') String? clientPhone,
+      @JsonKey(name: 'client_company_name') String? clientCompanyName,
+      @JsonKey(name: 'client_company_phone') String? clientCompanyPhone,
+      @JsonKey(name: 'client_logo') String? clientLogo,
       @JsonKey(name: 'have_discount') bool haveDiscount,
       @JsonKey(name: 'is_available') bool isAvailable,
       @JsonKey(name: 'client_is_verified') bool clientIsVerified,
@@ -254,6 +299,11 @@ class __$$ProductModelImplCopyWithImpl<$Res>
     Object? isCart = null,
     Object? clientName = freezed,
     Object? clientId = freezed,
+    Object? clientEmail = freezed,
+    Object? clientPhone = freezed,
+    Object? clientCompanyName = freezed,
+    Object? clientCompanyPhone = freezed,
+    Object? clientLogo = freezed,
     Object? haveDiscount = null,
     Object? isAvailable = null,
     Object? clientIsVerified = null,
@@ -302,6 +352,26 @@ class __$$ProductModelImplCopyWithImpl<$Res>
           ? _value.clientId
           : clientId // ignore: cast_nullable_to_non_nullable
               as int?,
+      clientEmail: freezed == clientEmail
+          ? _value.clientEmail
+          : clientEmail // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientPhone: freezed == clientPhone
+          ? _value.clientPhone
+          : clientPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientCompanyName: freezed == clientCompanyName
+          ? _value.clientCompanyName
+          : clientCompanyName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientCompanyPhone: freezed == clientCompanyPhone
+          ? _value.clientCompanyPhone
+          : clientCompanyPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientLogo: freezed == clientLogo
+          ? _value.clientLogo
+          : clientLogo // ignore: cast_nullable_to_non_nullable
+              as String?,
       haveDiscount: null == haveDiscount
           ? _value.haveDiscount
           : haveDiscount // ignore: cast_nullable_to_non_nullable
@@ -345,6 +415,11 @@ class _$ProductModelImpl implements _ProductModel {
       @JsonKey(name: 'is_cart') this.isCart = false,
       @JsonKey(name: 'client_name') this.clientName,
       @JsonKey(name: 'client_id') this.clientId,
+      @JsonKey(name: 'client_email') this.clientEmail,
+      @JsonKey(name: 'client_phone') this.clientPhone,
+      @JsonKey(name: 'client_company_name') this.clientCompanyName,
+      @JsonKey(name: 'client_company_phone') this.clientCompanyPhone,
+      @JsonKey(name: 'client_logo') this.clientLogo,
       @JsonKey(name: 'have_discount') this.haveDiscount = false,
       @JsonKey(name: 'is_available') this.isAvailable = true,
       @JsonKey(name: 'client_is_verified') this.clientIsVerified = false,
@@ -390,6 +465,21 @@ class _$ProductModelImpl implements _ProductModel {
   @JsonKey(name: 'client_id')
   final int? clientId;
   @override
+  @JsonKey(name: 'client_email')
+  final String? clientEmail;
+  @override
+  @JsonKey(name: 'client_phone')
+  final String? clientPhone;
+  @override
+  @JsonKey(name: 'client_company_name')
+  final String? clientCompanyName;
+  @override
+  @JsonKey(name: 'client_company_phone')
+  final String? clientCompanyPhone;
+  @override
+  @JsonKey(name: 'client_logo')
+  final String? clientLogo;
+  @override
   @JsonKey(name: 'have_discount')
   final bool haveDiscount;
   @override
@@ -409,7 +499,7 @@ class _$ProductModelImpl implements _ProductModel {
 
   @override
   String toString() {
-    return 'ProductModel(id: $id, name: $name, minQuantity: $minQuantity, maxQuantity: $maxQuantity, price: $price, productMedias: $productMedias, isFavourite: $isFavourite, isCart: $isCart, clientName: $clientName, clientId: $clientId, haveDiscount: $haveDiscount, isAvailable: $isAvailable, clientIsVerified: $clientIsVerified, rating: $rating, ratingCount: $ratingCount, brand: $brand)';
+    return 'ProductModel(id: $id, name: $name, minQuantity: $minQuantity, maxQuantity: $maxQuantity, price: $price, productMedias: $productMedias, isFavourite: $isFavourite, isCart: $isCart, clientName: $clientName, clientId: $clientId, clientEmail: $clientEmail, clientPhone: $clientPhone, clientCompanyName: $clientCompanyName, clientCompanyPhone: $clientCompanyPhone, clientLogo: $clientLogo, haveDiscount: $haveDiscount, isAvailable: $isAvailable, clientIsVerified: $clientIsVerified, rating: $rating, ratingCount: $ratingCount, brand: $brand)';
   }
 
   @override
@@ -433,6 +523,16 @@ class _$ProductModelImpl implements _ProductModel {
                 other.clientName == clientName) &&
             (identical(other.clientId, clientId) ||
                 other.clientId == clientId) &&
+            (identical(other.clientEmail, clientEmail) ||
+                other.clientEmail == clientEmail) &&
+            (identical(other.clientPhone, clientPhone) ||
+                other.clientPhone == clientPhone) &&
+            (identical(other.clientCompanyName, clientCompanyName) ||
+                other.clientCompanyName == clientCompanyName) &&
+            (identical(other.clientCompanyPhone, clientCompanyPhone) ||
+                other.clientCompanyPhone == clientCompanyPhone) &&
+            (identical(other.clientLogo, clientLogo) ||
+                other.clientLogo == clientLogo) &&
             (identical(other.haveDiscount, haveDiscount) ||
                 other.haveDiscount == haveDiscount) &&
             (identical(other.isAvailable, isAvailable) ||
@@ -447,24 +547,30 @@ class _$ProductModelImpl implements _ProductModel {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      minQuantity,
-      maxQuantity,
-      price,
-      const DeepCollectionEquality().hash(_productMedias),
-      isFavourite,
-      isCart,
-      clientName,
-      clientId,
-      haveDiscount,
-      isAvailable,
-      clientIsVerified,
-      rating,
-      ratingCount,
-      brand);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        minQuantity,
+        maxQuantity,
+        price,
+        const DeepCollectionEquality().hash(_productMedias),
+        isFavourite,
+        isCart,
+        clientName,
+        clientId,
+        clientEmail,
+        clientPhone,
+        clientCompanyName,
+        clientCompanyPhone,
+        clientLogo,
+        haveDiscount,
+        isAvailable,
+        clientIsVerified,
+        rating,
+        ratingCount,
+        brand
+      ]);
 
   /// Create a copy of ProductModel
   /// with the given fields replaced by the non-null parameter values.
@@ -495,6 +601,11 @@ abstract class _ProductModel implements ProductModel {
       @JsonKey(name: 'is_cart') final bool isCart,
       @JsonKey(name: 'client_name') final String? clientName,
       @JsonKey(name: 'client_id') final int? clientId,
+      @JsonKey(name: 'client_email') final String? clientEmail,
+      @JsonKey(name: 'client_phone') final String? clientPhone,
+      @JsonKey(name: 'client_company_name') final String? clientCompanyName,
+      @JsonKey(name: 'client_company_phone') final String? clientCompanyPhone,
+      @JsonKey(name: 'client_logo') final String? clientLogo,
       @JsonKey(name: 'have_discount') final bool haveDiscount,
       @JsonKey(name: 'is_available') final bool isAvailable,
       @JsonKey(name: 'client_is_verified') final bool clientIsVerified,
@@ -532,6 +643,21 @@ abstract class _ProductModel implements ProductModel {
   @override
   @JsonKey(name: 'client_id')
   int? get clientId;
+  @override
+  @JsonKey(name: 'client_email')
+  String? get clientEmail;
+  @override
+  @JsonKey(name: 'client_phone')
+  String? get clientPhone;
+  @override
+  @JsonKey(name: 'client_company_name')
+  String? get clientCompanyName;
+  @override
+  @JsonKey(name: 'client_company_phone')
+  String? get clientCompanyPhone;
+  @override
+  @JsonKey(name: 'client_logo')
+  String? get clientLogo;
   @override
   @JsonKey(name: 'have_discount')
   bool get haveDiscount;

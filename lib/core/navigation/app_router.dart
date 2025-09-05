@@ -9,6 +9,7 @@ import '../../features/checkout/presentation/pages/checkout_page.dart';
 import '../../features/home/domain/entities/category_entity.dart';
 import '../../features/home/domain/entities/brand_entity.dart';
 import '../../features/home/domain/entities/product_entity.dart';
+import '../../features/home/domain/entities/client_entity.dart';
 
 class AppRouter {
   static const String home = '/';
@@ -73,10 +74,12 @@ class AppRouter {
         );
 
       case productDetail:
-        final product = settings.arguments as ProductEntity;
+        final args = settings.arguments as Map<String, dynamic>;
+        final product = args['product'] as ProductEntity;
+        final client = args['client'] as ClientEntity?;
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              ProductDetailPage(product: product),
+              ProductDetailPage(product: product, client: client),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(0.0, 1.0);
             const end = Offset.zero;
@@ -199,10 +202,13 @@ class NavigationService {
     );
   }
 
-  static void navigateToProductDetail(ProductEntity product) {
+  static void navigateToProductDetail(
+    ProductEntity product, {
+    ClientEntity? client,
+  }) {
     navigatorKey.currentState?.pushNamed(
       AppRouter.productDetail,
-      arguments: product,
+      arguments: {'product': product, 'client': client},
     );
   }
 

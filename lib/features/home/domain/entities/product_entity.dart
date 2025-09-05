@@ -12,6 +12,11 @@ class ProductEntity extends Equatable {
   final bool isCart;
   final String? clientName;
   final int? clientId;
+  final String? clientEmail;
+  final String? clientPhone;
+  final String? clientCompanyName;
+  final String? clientCompanyPhone;
+  final String? clientLogo;
   final bool haveDiscount;
   final bool isAvailable;
   final bool clientIsVerified;
@@ -30,6 +35,11 @@ class ProductEntity extends Equatable {
     required this.isCart,
     this.clientName,
     this.clientId,
+    this.clientEmail,
+    this.clientPhone,
+    this.clientCompanyName,
+    this.clientCompanyPhone,
+    this.clientLogo,
     required this.haveDiscount,
     required this.isAvailable,
     required this.clientIsVerified,
@@ -50,6 +60,11 @@ class ProductEntity extends Equatable {
     isCart,
     clientName,
     clientId,
+    clientEmail,
+    clientPhone,
+    clientCompanyName,
+    clientCompanyPhone,
+    clientLogo,
     haveDiscount,
     isAvailable,
     clientIsVerified,

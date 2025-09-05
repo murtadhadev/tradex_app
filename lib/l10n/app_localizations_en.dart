@@ -410,4 +410,23 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get products => 'Products';
+
+  @override
+  String get cannotOpenPhoneApp => 'Cannot open phone app';
+
+  @override
+  String get phoneCallError =>
+      'Error occurred while trying to make a phone call';
+
+  @override
+  String get cannotOpenWhatsApp => 'Cannot open WhatsApp app';
+
+  @override
+  String get whatsappError => 'Error occurred while trying to open WhatsApp';
+
+  @override
+  String get cannotOpenEmailApp => 'Cannot open email app';
+
+  @override
+  String get emailError => 'Error occurred while trying to open email app';
 }
