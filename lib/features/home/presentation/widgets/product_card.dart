@@ -35,8 +35,9 @@ class ProductCard extends StatelessWidget {
                       top: Radius.circular(12),
                     ),
                     child: product.productMedias.isNotEmpty
-                        ? Center(
-                          child: CachedNetworkImage(
+                        ? Hero(
+                            tag: 'product_image_${product.id}',
+                            child: CachedNetworkImage(
                               imageUrl: product.productMedias.first.path,
                               width: double.infinity,
                               fit: BoxFit.cover,
@@ -53,7 +54,7 @@ class ProductCard extends StatelessWidget {
                                 ),
                               ),
                             ),
-                        )
+                          )
                         : Container(
                             color: AppColors.lightGray,
                             child: Icon(

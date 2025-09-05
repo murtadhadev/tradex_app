@@ -101,21 +101,27 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                           },
                           itemCount: widget.product.productMedias.length,
                           itemBuilder: (context, index) {
-                            return CachedNetworkImage(
-                              imageUrl:
-                                  widget.product.productMedias[index].path,
-                              fit: BoxFit.contain,
-                              placeholder: (context, url) => Shimmer.fromColors(
-                                baseColor: AppColors.lightGray,
-                                highlightColor: AppColors.secondary,
-                                child: Container(color: AppColors.secondary),
-                              ),
-                              errorWidget: (context, url, error) => Container(
-                                color: AppColors.lightGray,
-                                child: Icon(
-                                  Icons.image_not_supported,
-                                  color: AppColors.mediumGray,
-                                  size: 50,
+                            return Hero(
+                              tag: 'product_image_${widget.product.id}',
+                              child: CachedNetworkImage(
+                                imageUrl:
+                                    widget.product.productMedias[index].path,
+                                fit: BoxFit.contain,
+                                placeholder: (context, url) =>
+                                    Shimmer.fromColors(
+                                      baseColor: AppColors.lightGray,
+                                      highlightColor: AppColors.secondary,
+                                      child: Container(
+                                        color: AppColors.secondary,
+                                      ),
+                                    ),
+                                errorWidget: (context, url, error) => Container(
+                                  color: AppColors.lightGray,
+                                  child: Icon(
+                                    Icons.image_not_supported,
+                                    color: AppColors.mediumGray,
+                                    size: 50,
+                                  ),
                                 ),
                               ),
                             );

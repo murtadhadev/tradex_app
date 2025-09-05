@@ -5,6 +5,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import '../services/language_service.dart';
 import '../providers/locale_provider.dart';
+import '../navigation/app_router.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -56,13 +57,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           : null,
       centerTitle: !showLogo,
       actions: finalActions.isNotEmpty ? finalActions : null,
-      leading: leading,
-      automaticallyImplyLeading: automaticallyImplyLeading,
+      leading:
+          leading ??
+          (automaticallyImplyLeading
+              ? _buildAnimatedBackButton(context)
+              : null),
+      automaticallyImplyLeading: false,
       backgroundColor: backgroundColor ?? AppColors.secondary,
       elevation: elevation,
       titleSpacing: titleSpacing,
       iconTheme: const IconThemeData(color: AppColors.primary, size: 24),
       actionsIconTheme: const IconThemeData(color: AppColors.primary, size: 24),
+    );
+  }
+
+  Widget _buildAnimatedBackButton(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back_ios, color: AppColors.primary),
+      onPressed: () {
+        NavigationService.navigateBack();
+      },
     );
   }
 
