@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import '../../../home/domain/entities/product_entity.dart';
+import '../../../home/domain/entities/client_entity.dart';
 import '../../../home/presentation/widgets/product_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class AllProductsPage extends StatelessWidget {
   final String title;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
   const AllProductsPage({
     super.key,
     required this.title,
     required this.products,
+    required this.clients,
   });
 
   @override
@@ -64,7 +67,10 @@ class AllProductsPage extends StatelessWidget {
                           ),
                       itemCount: products.length,
                       itemBuilder: (context, index) {
-                        return ProductCard(product: products[index]);
+                        return ProductCard(
+                          product: products[index],
+                          clients: clients,
+                        );
                       },
                     ),
                   ),

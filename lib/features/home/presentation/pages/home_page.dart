@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../injection/injection.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../l10n/app_localizations.dart';
@@ -93,11 +91,13 @@ class HomePage extends StatelessWidget {
                     HomeProductsSection(
                       title: AppLocalizations.of(context)!.mostPopular,
                       products: state.mostPopularProducts,
+                      clients: state.bestClients,
                     ),
                   if (state.bestSellingProducts.isNotEmpty)
                     HomeProductsSection(
                       title: AppLocalizations.of(context)!.bestSelling,
                       products: state.bestSellingProducts,
+                      clients: state.bestClients,
                     ),
                 ],
               ),

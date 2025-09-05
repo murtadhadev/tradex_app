@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/entities/product_entity.dart';
+import '../../domain/entities/client_entity.dart';
 import 'product_card.dart';
 import '../../../../core/navigation/app_router.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -8,11 +9,13 @@ import '../../../../core/theme/app_text_styles.dart';
 class HomeProductsSection extends StatelessWidget {
   final String title;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
   const HomeProductsSection({
     super.key,
     required this.title,
     required this.products,
+    required this.clients,
   });
 
   @override
@@ -30,7 +33,11 @@ class HomeProductsSection extends StatelessWidget {
               Text(title, style: AppTextStyles.titleMedium),
               TextButton(
                 onPressed: () {
-                  NavigationService.navigateToAllProducts(title, products);
+                  NavigationService.navigateToAllProducts(
+                    title,
+                    products,
+                    clients,
+                  );
                 },
                 child: Text(AppLocalizations.of(context)!.seeAll),
               ),

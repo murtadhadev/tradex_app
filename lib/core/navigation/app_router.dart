@@ -107,6 +107,7 @@ class AppRouter {
               AllProductsPage(
                 title: args['title'] as String,
                 products: args['products'] as List<ProductEntity>,
+                clients: args['clients'] as List<ClientEntity>,
               ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(1.0, 0.0);
@@ -219,10 +220,11 @@ class NavigationService {
   static void navigateToAllProducts(
     String title,
     List<ProductEntity> products,
+    List<ClientEntity> clients,
   ) {
     navigatorKey.currentState?.pushNamed(
       AppRouter.allProducts,
-      arguments: {'title': title, 'products': products},
+      arguments: {'title': title, 'products': products, 'clients': clients},
     );
   }
 }
