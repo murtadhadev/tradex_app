@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shimmer/shimmer.dart';
@@ -16,11 +17,34 @@ class HomeBannerSlider extends StatefulWidget {
 class _HomeBannerSliderState extends State<HomeBannerSlider> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startAutoSlide();
+  }
 
   @override
   void dispose() {
+    _timer?.cancel();
     _pageController.dispose();
     super.dispose();
+  }
+
+  void _startAutoSlide() {
+    if (widget.banners.length > 1) {
+      _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+        if (mounted) {
+          _currentIndex = (_currentIndex + 1) % widget.banners.length;
+          _pageController.animateToPage(
+            _currentIndex,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        }
+      });
+    }
   }
 
   @override
@@ -37,6 +61,8 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
               setState(() {
                 _currentIndex = index;
               });
+              _timer?.cancel();
+              _startAutoSlide();
             },
             itemCount: widget.banners.length,
             itemBuilder: (context, index) {
