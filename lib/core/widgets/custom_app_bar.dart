@@ -180,10 +180,12 @@ class CustomAppBarFactory {
   static CustomAppBar withTitle(
     String title, {
     bool showLanguageSwitcher = false,
+    bool automaticallyImplyLeading = true,
   }) {
     return CustomAppBar(
       title: title,
       showLanguageSwitcher: showLanguageSwitcher,
+      automaticallyImplyLeading: automaticallyImplyLeading,
     );
   }
 
