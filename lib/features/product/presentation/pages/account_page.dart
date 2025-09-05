@@ -10,14 +10,24 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarFactory.withTitle(AppLocalizations.of(context)!.account),
+      appBar: CustomAppBarFactory.withTitle(
+        AppLocalizations.of(context)!.account,
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.person_outline, size: 80, color: AppColors.mediumGray),
+            const Icon(
+              Icons.person_outline,
+              size: 80,
+              color: AppColors.mediumGray,
+            ),
             const SizedBox(height: 16),
-            Text(AppLocalizations.of(context)!.account, style: AppTextStyles.titleMedium),
+            Text(
+              AppLocalizations.of(context)!.account,
+              style: AppTextStyles.titleMedium,
+            ),
             const SizedBox(height: 8),
             Text(
               AppLocalizations.of(context)!.manageAccountSettings,

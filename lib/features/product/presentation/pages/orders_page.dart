@@ -17,6 +17,7 @@ class OrdersPage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBarFactory.withTitle(
         AppLocalizations.of(context)!.orders,
+        automaticallyImplyLeading: false,
       ),
       body: BlocBuilder<OrdersBloc, OrdersState>(
         builder: (context, state) {

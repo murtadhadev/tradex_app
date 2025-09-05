@@ -17,7 +17,10 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarFactory.withTitle(AppLocalizations.of(context)!.cart),
+      appBar: CustomAppBarFactory.withTitle(
+        AppLocalizations.of(context)!.cart,
+        automaticallyImplyLeading: false,
+      ),
       body: BlocBuilder<CartBloc, CartState>(
         builder: (context, state) {
           if (state.cartItems.isEmpty) {

@@ -42,6 +42,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       appBar: CustomAppBarFactory.withTitle(
         AppLocalizations.of(context)!.search,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
