@@ -10,6 +10,7 @@ import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../cart/presentation/bloc/cart_bloc.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../../core/navigation/app_router.dart';
 
 class ProductDetailPage extends StatefulWidget {
   final ProductEntity product;
@@ -24,7 +25,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
   late PageController _pageController;
   int _currentImageIndex = 0;
   int _quantity = 1;
-  bool _isInCart = false;
 
   double get _totalPrice => widget.product.price * _quantity;
 
@@ -33,7 +33,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     super.initState();
     _pageController = PageController();
     _quantity = widget.product.minQuantity;
-    _isInCart = context.read<CartBloc>().state.isInCart(widget.product);
   }
 
   @override
@@ -47,11 +46,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       CartEvent.addToCart(product: widget.product, quantity: _quantity),
     );
 
-    setState(() {
-      _isInCart = true;
-    });
-
-    // Show success message
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -66,6 +60,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      if (mounted) {
+        NavigationService.navigateBack();
+      }
+    });
   }
 
   @override
@@ -676,16 +676,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           children: [
             Expanded(
               child: CustomButton(
-                text: _isInCart
-                    ? AppLocalizations.of(context)!.addedToCart
-                    : AppLocalizations.of(context)!.addToCart,
-                onPressed: widget.product.isAvailable && !_isInCart
-                    ? _addToCart
-                    : null,
-                style: _isInCart
-                    ? CustomButtonStyle.success
-                    : CustomButtonStyle.primary,
-                icon: _isInCart ? Icons.check : null,
+                text: AppLocalizations.of(context)!.addToCart,
+                onPressed: widget.product.isAvailable ? _addToCart : null,
+                style: CustomButtonStyle.primary,
                 borderRadius: 16,
                 padding: const EdgeInsets.symmetric(vertical: 8),
               ),
