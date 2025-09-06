@@ -53,7 +53,10 @@ class HomeProductsSection extends StatelessWidget {
                 return Container(
                   width: 180,
                   margin: const EdgeInsets.only(right: 12),
-                  child: ProductCard(product: products[index]),
+                  child: ProductCard(
+                    product: products[index],
+                    clients: clients,
+                  ),
                 );
               },
             ),

@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../home/domain/entities/category_entity.dart';
 import '../../../home/domain/entities/product_entity.dart';
+import '../../../home/domain/entities/client_entity.dart';
 import '../../../home/presentation/widgets/product_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class CategoryPage extends StatelessWidget {
   final CategoryEntity category;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
   const CategoryPage({
     super.key,
     required this.category,
     this.products = const [],
+    this.clients = const [],
   });
 
   @override
@@ -147,7 +150,10 @@ class CategoryPage extends StatelessWidget {
                                 ),
                             itemCount: products.length,
                             itemBuilder: (context, index) {
-                              return ProductCard(product: products[index]);
+                              return ProductCard(
+                                product: products[index],
+                                clients: clients,
+                              );
                             },
                           ),
                   ),

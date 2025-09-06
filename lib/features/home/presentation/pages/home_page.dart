@@ -78,6 +78,7 @@ class HomePage extends StatelessWidget {
                         ...state.mostPopularProducts,
                         ...state.bestSellingProducts,
                       ],
+                      clients: state.bestClients,
                     ),
                   if (state.brands.isNotEmpty)
                     HomeBrandsSection(
@@ -86,6 +87,7 @@ class HomePage extends StatelessWidget {
                         ...state.mostPopularProducts,
                         ...state.bestSellingProducts,
                       ],
+                      clients: state.bestClients,
                     ),
                   if (state.mostPopularProducts.isNotEmpty)
                     HomeProductsSection(

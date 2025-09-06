@@ -4,14 +4,21 @@ import 'package:shimmer/shimmer.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../home/domain/entities/brand_entity.dart';
 import '../../../home/domain/entities/product_entity.dart';
+import '../../../home/domain/entities/client_entity.dart';
 import '../../../home/presentation/widgets/product_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class BrandPage extends StatelessWidget {
   final BrandEntity brand;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
-  const BrandPage({super.key, required this.brand, this.products = const []});
+  const BrandPage({
+    super.key,
+    required this.brand,
+    this.products = const [],
+    this.clients = const [],
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +178,10 @@ class BrandPage extends StatelessWidget {
                                 ),
                             itemCount: products.length,
                             itemBuilder: (context, index) {
-                              return ProductCard(product: products[index]);
+                              return ProductCard(
+                                product: products[index],
+                                clients: clients,
+                              );
                             },
                           ),
                   ),

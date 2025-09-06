@@ -31,6 +31,7 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) => CategoryPage(
             category: args['category'] as CategoryEntity,
             products: args['products'] as List<ProductEntity>? ?? [],
+            clients: args['clients'] as List<ClientEntity>? ?? [],
           ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(1.0, 0.0);
@@ -55,6 +56,7 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) => BrandPage(
             brand: args['brand'] as BrandEntity,
             products: args['products'] as List<ProductEntity>? ?? [],
+            clients: args['clients'] as List<ClientEntity>? ?? [],
           ),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             const begin = Offset(1.0, 0.0);
@@ -186,20 +188,30 @@ class NavigationService {
   static void navigateToCategory(
     CategoryEntity category, {
     List<ProductEntity>? products,
+    List<ClientEntity>? clients,
   }) {
     navigatorKey.currentState?.pushNamed(
       AppRouter.category,
-      arguments: {'category': category, 'products': products ?? []},
+      arguments: {
+        'category': category,
+        'products': products ?? [],
+        'clients': clients ?? [],
+      },
     );
   }
 
   static void navigateToBrand(
     BrandEntity brand, {
     List<ProductEntity>? products,
+    List<ClientEntity>? clients,
   }) {
     navigatorKey.currentState?.pushNamed(
       AppRouter.brand,
-      arguments: {'brand': brand, 'products': products ?? []},
+      arguments: {
+        'brand': brand,
+        'products': products ?? [],
+        'clients': clients ?? [],
+      },
     );
   }
 

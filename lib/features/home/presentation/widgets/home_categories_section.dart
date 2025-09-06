@@ -4,6 +4,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/entities/category_entity.dart';
 import '../../domain/entities/product_entity.dart';
+import '../../domain/entities/client_entity.dart';
 import '../../../../core/navigation/app_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -11,11 +12,13 @@ import '../../../../core/theme/app_text_styles.dart';
 class HomeCategoriesSection extends StatelessWidget {
   final List<CategoryEntity> categories;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
   const HomeCategoriesSection({
     super.key,
     required this.categories,
     this.products = const [],
+    this.clients = const [],
   });
 
   @override
@@ -73,7 +76,11 @@ class HomeCategoriesSection extends StatelessWidget {
   Widget _buildCategoryCard(CategoryEntity category) {
     return GestureDetector(
       onTap: () {
-        NavigationService.navigateToCategory(category, products: []);
+        NavigationService.navigateToCategory(
+          category,
+          products: [],
+          clients: clients,
+        );
       },
       child: Container(
         width: 140,

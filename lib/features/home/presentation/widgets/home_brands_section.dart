@@ -4,6 +4,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../domain/entities/brand_entity.dart';
 import '../../domain/entities/product_entity.dart';
+import '../../domain/entities/client_entity.dart';
 import '../../../../core/navigation/app_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
@@ -11,11 +12,13 @@ import '../../../../core/theme/app_text_styles.dart';
 class HomeBrandsSection extends StatelessWidget {
   final List<BrandEntity> brands;
   final List<ProductEntity> products;
+  final List<ClientEntity> clients;
 
   const HomeBrandsSection({
     super.key,
     required this.brands,
     this.products = const [],
+    this.clients = const [],
   });
 
   @override
@@ -73,7 +76,11 @@ class HomeBrandsSection extends StatelessWidget {
             .where((product) => product.brand?.id == brand.id)
             .toList();
 
-        NavigationService.navigateToBrand(brand, products: brandProducts);
+        NavigationService.navigateToBrand(
+          brand,
+          products: brandProducts,
+          clients: clients,
+        );
       },
       child: Container(
         width: 100,
